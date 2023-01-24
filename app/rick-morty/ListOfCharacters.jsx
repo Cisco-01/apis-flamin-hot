@@ -9,28 +9,9 @@ export default function ListOfCharacters({ characters }) {
       {characters.map(item => (
         <article key={item.id} className="m-10 indent-4">
           {item.status === 'Alive' ? (
-            <div className="bg-green-500 w-6 h-6 animate-pulse rounded-full ml-auto">
-              {/*Mostrar ícono de vivo 
-              
-              <Image
-                src={item.image}
-                alt={item.name}
-                width={300}
-                height={300}
-                className="m-auto rounded hover:transition-all hover:duration-300 hover:scale-105 cursor-pointer"
-              ></Image>*/}
-            </div>
+            <div className="bg-green-500 w-6 h-6 animate-pulse rounded-full ml-auto"></div>
           ) : (
-            <div className="bg-red-500 w-6 h-6 animate-pulse rounded-full ml-auto">
-              {/*Mostrar ícono de muerto
-              <Image
-                src={item.image}
-                alt={item.name}
-                width={300}
-                height={300}
-                className="m-auto rounded hover:transition-all hover:duration-300 hover:scale-105 cursor-pointer"
-              ></Image>*/}
-            </div>
+            <div className="bg-red-500 w-6 h-6 animate-pulse rounded-full ml-auto"></div>
           )}
           <Image
             src={item.image}
