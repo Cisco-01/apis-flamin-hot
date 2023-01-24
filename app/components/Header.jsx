@@ -1,29 +1,26 @@
 import Link from 'next/link';
-import { HeaderFont } from '../font';
+import { TitleFont } from '../font';
 
 const links = [
   {
-    label: 'Home',
+    label: 'APIs Flamin Hot',
     route: '/',
-  },
-  {
-    label: 'Contact',
-    route: '/contact',
   },
 ];
 
 export default function Header() {
   return (
     <nav
-      className={`flex space-x-6 py-3 text-sm mt-9
-      md:text-base whitespace-nowrap justify-center px-6 text-white ${HeaderFont.className}`}
+      className={`flex py-4 mt-8 justify-center ${TitleFont.className}`}
     >
       {links.map(({ label, route }) => (
-        <p className="link" key={route}>
+        <h1
+          className="text-3xl cursor-pointer hover:scale-105 font-medium text-[#f0ffff]"
+          key={route}
+        >
           <Link href={route}>{label}</Link>
-        </p>
+        </h1>
       ))}
-      {/*<p className="link hidden sm:inline">More</p>*/}
     </nav>
   );
 }

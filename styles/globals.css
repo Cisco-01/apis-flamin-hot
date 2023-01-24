@@ -35,10 +35,7 @@
   .flame:hover {
     filter: blur(0px);
   }
-  .link {
-    @apply hover:text-[#FE9203] cursor-pointer hover:scale-105 font-medium;
-  }
-
+  
   /* Spinner */
   .spinner {
     animation: spin 0.6s linear infinite;

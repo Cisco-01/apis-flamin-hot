@@ -13,7 +13,7 @@ export default function RickMorty() {
   const initialURL = `https://rickandmortyapi.com/api/character?page=${page}`;
 
   const FetchCharacters = async () => {
-    fetch(initialURL)
+    fetch(initialURL, { next: { revalidate: 30 } })
       .then(response => response.json())
       .then(data => {
         setCharacters(data.results);
