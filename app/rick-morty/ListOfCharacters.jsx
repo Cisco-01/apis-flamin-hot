@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Loading from '../components/loading';
 
 export default function ListOfCharacters({ characters }) {
   return (
@@ -6,7 +7,8 @@ export default function ListOfCharacters({ characters }) {
       className="px-5 mb-10 sm:grid md:grid-cols-2 xl:grid-cols-3 
         3xl:flex flex-wrap justify-center items-center"
     >
-      {characters.map(item => (
+      {characters && characters.length > 0 ? (
+      characters.map(item => (
         <article key={item.id} className="m-10 indent-4">
           {item.status === 'Alive' ? (
             <div className="bg-green-500 w-6 h-6 animate-pulse rounded-full ml-auto"></div>
@@ -29,7 +31,9 @@ export default function ListOfCharacters({ characters }) {
           <p>Gender: {item.gender}</p>
           <p>Location: {item.location.name}</p>
         </article>
-      ))}
+      ))) : (
+        <Loading />
+      )}
     </section>
   );
 }

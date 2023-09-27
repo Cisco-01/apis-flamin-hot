@@ -15,7 +15,7 @@ export default function Header() {
     >
       {links.map(({ label, route }) => (
         <h1
-          className="text-3xl cursor-pointer hover:scale-105 font-medium text-[#f0ffff]"
+          className="text-3xl cursor-pointer hover:scale-105 font-medium text-[#f0ffff] z-50"
           key={route}
         >
           <Link href={route}>{label}</Link>
