@@ -5,6 +5,7 @@
 @layer base {
   html,
   body {
+    background-color: black;
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -62,6 +63,40 @@
   }
   #rnm:hover {
     box-shadow: 0 25px 50px -12px rgb(63 98 18);
+  }
+
+  /* Pokémon */
+  #pokemon {
+    box-shadow: 0 1px 3px 0 rgb(255, 255, 255);
+  }
+  #pokemon:hover {
+    box-shadow: 0 25px 50px -12px rgb(170, 170, 170);
+  }
+  .left-content, .right-content {
+    flex-basis: 50%;
+  }
+  .abilities .group {
+    background-color: firebrick;
+    color: white;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+  
+  .btn-group button {
+    outline: none;
+    border: none;
+    width: 100px;
+    padding: 0.3rem 0;
+    margin: 1rem auto;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: bottom bottom;
+    border-radius: 8px;
   }
 
   /* Astronomy Picture of the Day */

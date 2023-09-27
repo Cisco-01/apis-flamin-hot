@@ -1,5 +1,5 @@
 'use client';
 
-export default function loading() {
+export default function Loading() {
   return <div className="spinner"></div>;
 }
