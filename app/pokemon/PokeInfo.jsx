@@ -11,11 +11,11 @@ function PokeInfo({ data }) {
         <>
           <h1 className="uppercase font-bold tracking-widest">{data.name}</h1>
           <Image
-            className="mx-auto"
+            className="mx-auto md:w-52 xl:w-60"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`}
             alt=""
-            width={225}
-            height={225}
+            width={100}
+            height={100}
           />
           <div className="abilities w-[30%] m-auto flex justify-around items-center mt-4 space-x-4">
             {data.abilities.map(poke => (
@@ -29,10 +29,9 @@ function PokeInfo({ data }) {
               return (
                 <div className='flex justify-center uppercase'>
                   <h3 className='font-extralight'>
-                    {poke.stat.name}: 
+                    {poke.stat.name}:
                   </h3>
-                  
-                  <span className='font-light'> {poke.base_stat}</span>
+                  <span className='font-light'>{poke.base_stat}</span>
                 </div>
               );
             })}

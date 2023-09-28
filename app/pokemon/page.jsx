@@ -58,7 +58,7 @@ export default function Pokemon() {
             setUrl={item => setUrl(item)}
           />
         </div>
-        <div className="right-content w-1/2 fixed text-center text-white lg:absolute top-48 sm:top-52 md:top-56 lg:top-80 xl:top-72 right-2">
+        <div className="right-content w-1/2 fixed text-center text-white lg:absolute top-48 sm:top-52 md:top-56 lg:top-64 right-2">
           <PokeInfo data={pokeDex} />
         </div>
       </div>
