@@ -17,17 +17,17 @@ function PokeInfo({ data }) {
             width={75}
             height={75}
           />
-          <div className="abilities m-auto flex justify-center items-center mt-4 gap-2">
+          {/*<div className="abilities m-auto flex justify-center items-center mt-2 gap-2">
             {data.abilities.map(poke => (
               <div className="group mr-2 lg:mx-0">
-                <h2 className='px-2 text-base'>{poke.ability.name}</h2>
+                <h2 className='px-2 text-sm'>{poke.ability.name}</h2>
               </div>
             ))}
-          </div>
+          </div>*/}
           <div className="base-stat mt-2">
             {data.stats.map(poke => {
               return (
-                <div className='flex justify-center uppercase'>
+                <div className='flex justify-center uppercase text-sm'>
                   <h3 className='font-extralight'>
                     {poke.stat.name}:
                   </h3>
