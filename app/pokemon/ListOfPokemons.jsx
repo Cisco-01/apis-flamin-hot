@@ -9,15 +9,14 @@ export default function ListOfPokemons({ pokeData, infoPokemon }) {
           <article
             key={index}
             onClick={() => infoPokemon(item)}
-            className="flex w-48 md:w-52 xl:w-60 bg-zinc-900 rounded-2xl items-center justify-between box-border mx-auto"
+            className="flex w-40 h-14 md:w-52 xl:w-60 bg-zinc-900 rounded-2xl items-center justify-between box-border mx-auto cursor-pointer"
           >
-            <p className='animate-pulse text-xs text-yellow-400 px-1'>{item.id}</p>
             <Image
+              className="rounded hover:transition-all hover:duration-300 hover:scale-110 cursor-pointer m-2"
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${item.id}.svg`}
               alt={item.name}
-              width={50}
-              height={50}
-              className="rounded hover:transition-all hover:duration-300 hover:scale-110 cursor-pointer m-2"
+              width={30}
+              height={30}
             ></Image>
             <h1 className="text-sm md:text-base xl:text-lg uppercase">
               <span>{item.name}</span>
