@@ -1,8 +1,5 @@
 ---
 icon: fire-flame-curved
-cover: >-
-  https://images.unsplash.com/photo-1496483353456-90997957cf99?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxOTcwMjR8MHwxfHNlYXJjaHwxfHxGTEFNRXxlbnwwfHx8fDE3Mjk1NDM5MTZ8MA&ixlib=rb-4.0.3&q=85
-coverY: 56
 ---
 
 # APIS FLAMING HOT
