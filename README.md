@@ -1,12 +1,25 @@
 ---
 icon: fire-flame-curved
-description: >-
-  APIs FLAMING HOT is an innovative application designed to simplify your search
-  for APIs and databases related to your favorite cartoons. Whether you're a
-  developer, researcher, or cartoon enthusiast.
+layout:
+  title:
+    visible: false
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# APIS FLAMING HOT 🔥🌶️
+# Untitled
+
+## APIS FLAMING HOT 🔥🌶️
+
+### Description
+
+APIs FLAMING HOT is an innovative application designed to simplify your search for APIs and databases related to your favorite cartoons. Whether you're a developer, researcher, or cartoon enthusiast.
 
 ### Features
 
