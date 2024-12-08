@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -24,13 +20,20 @@
       }
     ]
   },
+  "baseUrl": ".",
+  "paths": {
+    "@/*": ["./*"]
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "app/contact/page.jsx", "app/gifs/page.jsx", "app/components/Header.jsx", "app/gifs/ListOfGifs.jsx", "app/gifs/[id]/page.jsx"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    ".next/types/**/*.ts",
+    "app/contact/page.jsx",
+    "app/gifs/page.jsx",
+    "app/components/Header.jsx",
+    "app/gifs/ListOfGifs.jsx",
+    "app/gifs/[id]/page.jsx"
+, "app/rick-morty/Paginator.jsx", "app/rick-morty/ListOfCharacters.jsx", "app/rick-morty/ListOfEpisodes.jsx"  ],
+  "exclude": ["node_modules"]
 }

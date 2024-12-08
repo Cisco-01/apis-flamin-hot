@@ -1,4 +1,4 @@
-import { Poiret_One } from '@next/font/google';
+import { Poiret_One } from 'next/font/google';
 
 export const TitleFont = Poiret_One({
   weight: ['400'],

@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Buttons({nextURL, prevURL, setPokeData, setUrl}) {
   return (
     <div className="btn-group flex hover:bg-transparent">
