@@ -6,7 +6,6 @@ import Loading from "../components/loading";
 
 export default function RickMorty() {
   const [characters, setCharacters] = useState([]);
-  const [episodes, setEpisodes] = useState([]);
   const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [infoCharacters, setInfoCharacters] = useState({});
@@ -40,15 +39,6 @@ export default function RickMorty() {
               })
               .catch((error) => console.error("Error fetching locations:", error))
         ),
-        fetch(endpoints.episodes, { next: { revalidate: 30 } }).then(
-          (response) =>
-            response
-              .json()
-              .then((data) => {
-                setEpisodes(data.results || []);
-              })
-              .catch((error) => console.error("Error fetching episodes:", error))
-        ),
       ]);
 
       setLoading(false);
@@ -77,7 +67,6 @@ export default function RickMorty() {
         info={infoCharacters}
         characters={characters}
         locations={locations}
-        episodes={episodes}
         page={page}
         handlePaginationChange={handlePaginationChange}
       />

@@ -9,15 +9,17 @@ import {
 } from "../../@/components/ui/hover-card";
 import ListOfLocations from "./ListOfLocations";
 import ListOfEpisodes from "./ListOfEpisodes";
+import { useState } from "react";
+import { ScrollArea } from "../../@/components/ui/scroll-area";
 
 export default function ListOfCharacters({
   info,
   locations,
   characters,
-  episodes,
   page,
   handlePaginationChange,
 }) {
+  const [openCard, setOpenCard] = useState(null);
   const getColorStatus = (status) => {
     switch (status) {
       case "Alive":
@@ -29,6 +31,10 @@ export default function ListOfCharacters({
     }
   };
 
+  const handleOpenChange = (id, isOpen) => {
+    setOpenCard(isOpen ? id : null);
+  };
+
   return (
     <>
       <Paginator
@@ -37,7 +43,7 @@ export default function ListOfCharacters({
         handlePaginationChange={handlePaginationChange}
       />
       {characters && characters.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-3">
+        <div className="grid md:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-3">
           {characters.map((character) => {
             // Verificar si 'location' es una URL o un objeto
             let locationName = "";
@@ -85,18 +91,33 @@ export default function ListOfCharacters({
                   {character.gender === "unknown" ? null : (
                     <p>Gender: {character.gender}</p>
                   )}
-                  <HoverCard>
-                    <HoverCardTrigger>
+                  <HoverCard
+                    key={character.id}
+                    open={openCard === character.id}
+                    onOpenChange={(isOpen) =>
+                      handleOpenChange(character.id, isOpen)
+                    }
+                  >
+                    <HoverCardTrigger
+                      onClick={() =>
+                        setOpenCard(
+                          openCard === character.id ? null : character.id
+                        )
+                      }
+                      onMouseEnter={() => setOpenCard(character.id)}
+                    >
                       <p className="bg-rose-500/20 hover:bg-rose-500/50 rounded text-center p-1">
                         Information ℹ️
                       </p>
                     </HoverCardTrigger>
-                    <HoverCardContent className="border shadow-white shadow-md">
+                    <HoverCardContent className="border shadow-white shadow-md ">
+                    <ScrollArea className="h-72">
                       <ListOfLocations
                         locationsUrl={character.location.url} // URL de las ubicaciones
                       />
                       <br />
                       <ListOfEpisodes characterUrl={character.episode} />
+                      </ScrollArea>
                     </HoverCardContent>
                   </HoverCard>
                 </article>

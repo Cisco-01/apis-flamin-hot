@@ -25,7 +25,7 @@ interface CardGridProps {
 
 export const Cartoons = ({ cards }: CardGridProps) => {
   return (
-    <div id="explore" className="mx-auto items-center justify-center text-center">
+    <div id="explore" className="flex w-full justify-center">
       <section className="flex flex-col md:flex-row space-y-4 md:w-full mx-auto justify-center items-center">
         <p className="text-[clamp(1.25rem,3.5vw+1rem,5rem)] text-center translate-x-3">
           EXPLORE
@@ -40,10 +40,10 @@ export const Cartoons = ({ cards }: CardGridProps) => {
         >
           <CarouselContent>
             {cards.map((item) => (
-              <CarouselItem key={item.id} className="">
+              <CarouselItem key={item.id}>
                 <div className="p-1">
                   <Card>
-                    <CardContent className="p-6 items-center flex w-full mx-auto justify-start">
+                    <CardContent className="flex">
                       <Link href={item.url} passHref>
                         <Image
                           src={item.path}

@@ -55,9 +55,9 @@ export const ScrollAnimation = () => {
             maxWidth: `${Math.max(60, 100 - scrollProgress * 40)}%`, // Reduce el maxWidth de 100% a 60% del ancho de la pantalla
           }}
         >
-          <h1 className="text-[clamp(2.5rem,7vw+1rem,10rem)] text-center leading-none w-screen grid">
-            <span className="text-[#09f] text-[0.35em]">🔥</span>
-            <span>APIs Flamin Hot</span>
+          <h1 className="text-[clamp(2.5rem,7vw+1rem,10rem)] text-center leading-none w-screen ">
+          <span className="text-[#09f] text-[0.35em]">🔥</span>
+          <span className="flex w-full justify-center">APIs Flamin Hot</span>
           </h1>
         </div>
         <div className="animate-pulse">

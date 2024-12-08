@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Loading from "../components/loading";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../@/components/ui/accordion";
 
 export default function ListOfEpisodes({ characterUrl }) {
   const [episodesDetails, setEpisodesDetails] = useState([]);
@@ -35,26 +41,33 @@ export default function ListOfEpisodes({ characterUrl }) {
 
   return (
     <>
-      <span className="justify-center w-full flex">EPISODES 🎞️</span>
-      {episodesDetails.length > 0 ? (
-        episodesDetails.map((episode) => (
-          <article
-            key={episode.id}
-            className="text-start text-sm md:text-base 2xl:text-lg text-white"
-          >
-            <h3 className="font-bold text-gray-300">{episode.name}</h3>
-            <hr className="mr-8 my-1" />
-            <p>Air Date: {episode.air_date}</p>
-            <p>Episode: {episode.episode}</p>
-            <p>Characters: {episode.characters.length}</p>
-          </article>
-        ))
-      ) : (
-        <p className="text-gray-400 text-center text-lg">
-          No episodes found for this character.
-        </p>
-      )}
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger className="justify-center w-full flex">
+            🎞️ EPISODES
+          </AccordionTrigger>
+          <AccordionContent>
+            {episodesDetails.length > 0 ? (
+              episodesDetails.map((episode) => (
+                <article
+                  key={episode.id}
+                  className="text-start text-sm md:text-base 2xl:text-lg text-white"
+                >
+                  <h3 className="font-bold text-gray-300">{episode.name}</h3>
+                  <hr className="mr-8 my-1" />
+                  <p>Air Date: {episode.air_date}</p>
+                  <p>Episode: {episode.episode}</p>
+                  <p>Characters: {episode.characters.length}</p>
+                </article>
+              ))
+            ) : (
+              <p className="text-gray-400 text-center text-lg">
+                No episodes found for this character.
+              </p>
+            )}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </>
   );
 }
-
